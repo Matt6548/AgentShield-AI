@@ -1,0 +1,44 @@
+name: RC Freeze Verification
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-rc-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Contract smoke tests
+        run: python -m pytest -q tests/test_contracts_smoke.py
+
+      - name: Prompt-pack consistency gate
+        run: python -m pytest -q tests/test_prompt_files.py
+
+      - name: RC freeze consistency gate
+        run: python -m pytest -q tests/test_rc_freeze_consistency.py
+
+      - name: Final RC decision consistency gate
+        run: python -m pytest -q tests/test_final_rc_decision_consistency.py
+
+      - name: Full test suite
+        run: python -m pytest -q
+
+      - name: Compile check
+        run: python -m compileall src tests
+
+      - name: Build package
+        run: |
+          python -m pip install build
+          python -m build

@@ -1,0 +1,12 @@
+{
+  "run_id": "demo-approval",
+  "actor": "demo-user",
+  "action": "change_config",
+  "environment": "prod",
+  "tool": "config_reader",
+  "command": "",
+  "payload": {
+    "feature": "alpha"
+  },
+  "dry_run": true
+}

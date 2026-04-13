@@ -1,0 +1,11 @@
+# Core runtime
+fastapi
+uvicorn
+pydantic
+jsonschema
+httpx
+
+# Testing
+pytest
+
+# Package C adds API skeleton + connector stubs without extra non-FastAPI runtime deps.

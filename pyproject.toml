@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-core"
+version = "0.1.0"
+description = "SafeCore security middleware foundation for guarded AI agent execution."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [
+  { name = "SafeCore Contributors" }
+]
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "jsonschema",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "build",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

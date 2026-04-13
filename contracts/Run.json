@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Run",
+  "description": "Top-level SafeCore run contract.",
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run", "hitl_required", "auto_allowed"]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "./Step.json"
+      }
+    },
+    "final_decision": {
+      "$ref": "./SafetyDecision.json"
+    }
+  },
+  "required": [
+    "run_id",
+    "actor",
+    "mode",
+    "created_at",
+    "steps",
+    "final_decision"
+  ],
+  "additionalProperties": false
+}
+

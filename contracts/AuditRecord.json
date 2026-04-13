@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuditRecord",
+  "description": "Immutable audit event for run-time actions.",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "step": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "hash": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "timestamp",
+    "run_id",
+    "actor",
+    "step",
+    "action",
+    "data",
+    "hash"
+  ],
+  "additionalProperties": false
+}
+

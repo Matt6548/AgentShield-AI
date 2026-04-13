@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Step",
+  "description": "One pipeline step in a SafeCore run.",
+  "type": "object",
+  "properties": {
+    "step_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "RUNNING", "DONE", "BLOCKED", "FAILED"]
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "step_id",
+    "type",
+    "status",
+    "inputs",
+    "outputs",
+    "errors"
+  ],
+  "additionalProperties": false
+}
+

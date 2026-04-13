@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafeCore Demo UI</title>
+  <link rel="stylesheet" href="/ui-assets/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <nav class="topnav">
+        <a href="#overview" id="nav-overview">Overview</a>
+        <a href="#onboarding" id="nav-onboarding">Onboarding</a>
+        <a href="#product-shell" id="nav-product-shell">Product Shell</a>
+        <a href="#providers" id="nav-providers">Providers</a>
+        <a href="#assistant" id="nav-assistant">Assistant</a>
+        <a href="#run-history" id="nav-history">Run History</a>
+        <a href="#approval-audit" id="nav-approval-audit">Approval And Audit</a>
+      </nav>
+      <label class="language-switcher" for="language-select">
+        <span id="language-label">Language</span>
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="uz">O'zbek</option>
+        </select>
+      </label>
+    </div>
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-eyebrow">SafeCore Product Shell</p>
+        <h1 id="hero-title">Security/control layer for AI agents.</h1>
+        <p class="lead" id="hero-lead">
+          Visualize the current SafeCore validated core, inspect its architecture,
+          and run the frozen demo scenarios through the real dry-run guarded path.
+        </p>
+        <div class="hero-actions">
+          <a class="action" href="#reference-product-flow" id="hero-action-primary">Try reference product flow</a>
+          <a class="action secondary" href="#product-shell" id="hero-action-secondary">See product shell</a>
+        </div>
+      </div>
+      <div class="hero-status" id="hero-status"></div>
+    </header>
+
+    <main class="content">
+      <section class="section" id="onboarding">
+        <div class="section-header">
+          <p class="section-kicker" id="onboarding-kicker">Onboarding</p>
+          <h2 id="onboarding-title">Get oriented before your first guarded run</h2>
+        </div>
+        <div class="overview-grid onboarding-layout">
+          <article class="panel story-panel">
+            <h3 id="onboarding-headline">Start in five short steps</h3>
+            <p id="onboarding-subtext"></p>
+            <p class="microcopy" id="onboarding-workflow"></p>
+            <div class="progress-stack">
+              <div class="progress-meta">
+                <span class="metric-label" id="onboarding-progress-label">Progress</span>
+                <span class="progress-value" id="onboarding-progress-value">0 / 5</span>
+              </div>
+              <div class="progress-bar">
+                <span class="progress-bar-fill" id="onboarding-progress-bar"></span>
+              </div>
+            </div>
+            <div class="onboarding-detail">
+              <h4 id="onboarding-step-title">Language</h4>
+              <p id="onboarding-step-summary"></p>
+              <p class="microcopy" id="onboarding-step-why"></p>
+              <p class="microcopy" id="onboarding-step-next"></p>
+            </div>
+            <p class="microcopy" id="onboarding-safe-note"></p>
+            <div class="inline-actions">
+              <a class="action secondary compact-action" id="onboarding-open-link" href="#overview">Open section</a>
+              <button id="onboarding-mark-complete" type="button">Mark step complete</button>
+              <button id="onboarding-next-step" type="button">Next onboarding step</button>
+              <button id="onboarding-reset" class="secondary-button" type="button">Reset onboarding</button>
+            </div>
+          </article>
+          <article class="panel">
+            <h3 id="onboarding-steps-title">Onboarding steps</h3>
+            <div class="step-list" id="onboarding-steps"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-overview" id="overview">
+        <div class="section-header">
+          <p class="section-kicker" id="overview-kicker">Overview</p>
+          <h2 id="overview-title">What SafeCore is right now</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="panel story-panel">
+            <h3 id="project-identity-title">Project identity</h3>
+            <p id="identity-summary"></p>
+            <p class="microcopy" id="identity-subtext"></p>
+          </article>
+          <article class="panel story-panel">
+            <h3 id="what-safecore-does-title">What SafeCore does</h3>
+            <div class="capability-grid" id="capability-grid"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="reference-product-flow">
+        <div class="section-header">
+          <p class="section-kicker" id="reference-kicker">Reference Product Flow</p>
+          <h2 id="reference-title">Turn one simple user task into a guarded SafeCore result</h2>
+        </div>
+        <div class="integration-layout">
+          <article class="panel integration-story">
+            <h3 id="reference-headline"></h3>
+            <p id="reference-subtext"></p>
+            <p class="microcopy" id="reference-workflow"></p>
+            <p class="microcopy" id="reference-user-task"></p>
+            <p class="microcopy" id="reference-protection"></p>
+            <p class="microcopy" id="reference-why-it-matters"></p>
+          </article>
+          <article class="panel demo-controls">
+            <label for="reference-flow-select" id="reference-flow-label">Choose user task</label>
+            <select id="reference-flow-select"></select>
+            <button id="run-reference-flow" type="button">Run reference flow</button>
+            <p class="microcopy" id="reference-microcopy">
+              This is a minimal product shell around the current safe HTTP path. It remains honest: dry-run-first, narrow, and not a production platform.
+            </p>
+          </article>
+          <article class="panel demo-result integration-result">
+            <div class="result-head">
+              <div>
+                <p class="section-kicker" id="reference-result-kicker">Reference Product Result</p>
+                <h3 id="reference-result-title">Choose a user task</h3>
+              </div>
+              <span class="decision-badge" id="reference-result-decision">WAITING</span>
+            </div>
+            <div class="metrics" id="reference-result-metrics"></div>
+            <div class="result-explainer" id="reference-result-explainer"></div>
+            <details class="json-panel">
+              <summary>Reference product details</summary>
+              <pre id="reference-result-json"></pre>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="product-shell">
+        <div class="section-header">
+          <p class="section-kicker" id="product-shell-kicker">Product Shell</p>
+          <h2 id="product-shell-title">Monitoring, history, approval visibility, and audit evidence in one place</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="panel story-panel">
+            <h3 id="shell-headline"></h3>
+            <p id="shell-subtext"></p>
+            <p class="microcopy" id="shell-what-is-happening"></p>
+            <p class="microcopy" id="shell-why-it-matters"></p>
+            <p class="microcopy" id="shell-next-step"></p>
+          </article>
+          <article class="panel">
+            <h3 id="operations-overview-title">Operations overview</h3>
+            <div class="summary-grid" id="summary-grid"></div>
+            <div class="panel-note">
+              <h4 id="latest-events-title">Latest events</h4>
+              <div class="event-list" id="latest-events"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="providers">
+        <div class="section-header">
+          <p class="section-kicker" id="providers-kicker">Provider Status</p>
+          <h2 id="providers-title">See configuration posture without exposing secrets</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="panel story-panel">
+            <h3 id="providers-headline"></h3>
+            <p id="providers-subtext"></p>
+            <p class="microcopy" id="providers-why-safe"></p>
+            <p class="microcopy" id="providers-configured-help"></p>
+            <p class="microcopy" id="providers-enabled-help"></p>
+            <div class="panel-note">
+              <h4 id="providers-guidance-title">How to enable a provider card safely</h4>
+              <ul class="limit-list compact" id="provider-guidance-list"></ul>
+            </div>
+          </article>
+          <article class="panel">
+            <h3 id="providers-cards-title">Provider cards</h3>
+            <div class="provider-grid" id="provider-grid"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="assistant">
+        <div class="section-header">
+          <p class="section-kicker" id="assistant-kicker">Safety Copilot Advisory</p>
+          <h2 id="assistant-title">Get optional plain-language guidance without changing the final decision</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="panel story-panel">
+            <h3 id="assistant-headline"></h3>
+            <p id="assistant-subtext"></p>
+            <p class="microcopy" id="assistant-safe-note"></p>
+            <p class="microcopy" id="assistant-how-it-works"></p>
+            <div class="panel-note">
+              <h4 id="assistant-data-scope-title">Minimized data scope</h4>
+              <ul class="limit-list compact" id="assistant-data-scope"></ul>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="result-head">
+              <div>
+                <p class="section-kicker" id="assistant-result-kicker">Assistant Insight</p>
+                <h3 id="assistant-result-title">Run a guarded flow first</h3>
+              </div>
+              <span class="decision-badge" id="assistant-result-status">DISABLED</span>
+            </div>
+            <p class="microcopy" id="assistant-status-copy"></p>
+            <button id="assistant-run-insight" type="button">Explain latest result</button>
+            <div class="result-explainer" id="assistant-result-explainer"></div>
+            <div class="summary-grid" id="assistant-capabilities-grid"></div>
+            <details class="json-panel">
+              <summary id="assistant-json-summary">Assistant details</summary>
+              <pre id="assistant-result-json"></pre>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="run-history">
+        <div class="section-header">
+          <p class="section-kicker" id="history-kicker">Run History</p>
+          <h2 id="history-title">See what SafeCore has allowed, blocked, or held for approval</h2>
+        </div>
+        <div class="history-layout">
+          <article class="panel demo-controls">
+            <label for="history-filter" id="history-filter-label">Filter by decision</label>
+            <select id="history-filter">
+              <option value="ALL">ALL</option>
+              <option value="ALLOW">ALLOW</option>
+              <option value="NEEDS_APPROVAL">NEEDS_APPROVAL</option>
+              <option value="DENY">DENY</option>
+            </select>
+            <label for="history-status-filter" id="history-status-filter-label">Filter by run status</label>
+            <select id="history-status-filter"></select>
+            <label for="history-provider-filter" id="history-provider-filter-label">Filter by provider mode</label>
+            <select id="history-provider-filter"></select>
+            <button id="refresh-history" type="button">Refresh history</button>
+            <p class="microcopy" id="shell-history-hint"></p>
+          </article>
+          <article class="panel">
+            <h3 id="recent-runs-title">Recent runs</h3>
+            <div class="history-list" id="history-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="approval-audit">
+        <div class="section-header">
+          <p class="section-kicker" id="approval-audit-kicker">Approval And Audit</p>
+          <h2 id="approval-audit-title">Understand what needs attention and where the evidence lives</h2>
+        </div>
+        <div class="overview-grid">
+          <article class="panel">
+            <h3 id="approval-queue-title">Approval queue</h3>
+            <p class="microcopy" id="shell-approval-hint"></p>
+            <div class="queue-list" id="approval-queue-list"></div>
+          </article>
+          <article class="panel">
+            <h3 id="audit-viewer-title">Audit viewer</h3>
+            <p class="microcopy" id="shell-audit-hint"></p>
+            <div class="inline-filter-grid">
+              <div>
+                <label for="audit-decision-filter" id="audit-decision-filter-label">Filter by decision</label>
+                <select id="audit-decision-filter"></select>
+              </div>
+              <div>
+                <label for="audit-provider-filter" id="audit-provider-filter-label">Filter by provider mode</label>
+                <select id="audit-provider-filter"></select>
+              </div>
+              <div>
+                <label for="audit-integrity-filter" id="audit-integrity-filter-label">Filter by integrity</label>
+                <select id="audit-integrity-filter"></select>
+              </div>
+            </div>
+            <button id="refresh-audit" type="button">Refresh audit view</button>
+            <div class="audit-list" id="audit-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="decision-states">
+        <div class="section-header">
+          <p class="section-kicker" id="decision-kicker">Three Decision States</p>
+          <h2 id="decision-title">ALLOW, NEEDS_APPROVAL, DENY</h2>
+        </div>
+        <div class="decision-grid" id="decision-grid"></div>
+      </section>
+
+      <section class="section" id="demo-runner">
+        <div class="section-header">
+          <p class="section-kicker" id="demo-kicker">Demo Runner</p>
+          <h2 id="demo-title">Run the frozen scenarios through the current guarded path</h2>
+        </div>
+        <div class="demo-layout">
+          <article class="panel demo-controls">
+            <label for="scenario-select" id="scenario-label">Choose demo scenario</label>
+            <select id="scenario-select"></select>
+            <button id="run-scenario" type="button">Run scenario</button>
+            <p class="microcopy" id="demo-microcopy">
+              This UI remains dry-run only and does not enable real external side effects.
+            </p>
+          </article>
+          <article class="panel demo-result">
+            <div class="result-head">
+              <div>
+                <p class="section-kicker" id="scenario-result-kicker">Scenario Result</p>
+                <h3 id="result-title">Choose a scenario</h3>
+              </div>
+              <span class="decision-badge" id="result-decision">WAITING</span>
+            </div>
+            <div class="metrics" id="result-metrics"></div>
+            <div class="result-explainer" id="result-explainer"></div>
+            <details class="json-panel">
+              <summary>Result details</summary>
+              <pre id="result-json"></pre>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="safe-integration">
+        <div class="section-header">
+          <p class="section-kicker" id="integration-kicker">First Practical Integration Path</p>
+          <h2 id="integration-title">Use SafeCore in front of one real read-only connector boundary today</h2>
+        </div>
+        <div class="integration-layout">
+          <article class="panel integration-story">
+            <h3 id="integration-headline"></h3>
+            <p id="integration-subtext"></p>
+            <p class="microcopy" id="integration-connects-to"></p>
+            <p class="microcopy" id="integration-workflow"></p>
+            <p class="microcopy" id="integration-developer-placement"></p>
+            <p class="microcopy" id="integration-how-to-use"></p>
+            <div class="integration-grid" id="integration-grid"></div>
+          </article>
+          <article class="panel demo-controls">
+            <label for="integration-select" id="integration-label">Choose integration example</label>
+            <select id="integration-select"></select>
+            <button id="run-integration" type="button">Run integration example</button>
+            <p class="microcopy" id="integration-microcopy">
+              This connector remains intentionally narrow: GET only, trusted local hosts only, blocked-safe for everything else.
+            </p>
+            <div class="integration-lists">
+              <div>
+                <h4 id="integration-allowed-title">Allowed</h4>
+                <ul class="limit-list" id="integration-allowed-list"></ul>
+              </div>
+              <div>
+                <h4 id="integration-blocked-title">Blocked</h4>
+                <ul class="limit-list" id="integration-blocked-list"></ul>
+              </div>
+            </div>
+          </article>
+          <article class="panel demo-result integration-result">
+            <div class="result-head">
+              <div>
+                <p class="section-kicker" id="integration-result-kicker">Integration Result</p>
+                <h3 id="integration-result-title">Choose an integration example</h3>
+              </div>
+              <span class="decision-badge" id="integration-result-decision">WAITING</span>
+            </div>
+            <div class="metrics" id="integration-result-metrics"></div>
+            <div class="result-explainer" id="integration-result-explainer"></div>
+            <details class="json-panel">
+              <summary>Integration details</summary>
+              <pre id="integration-result-json"></pre>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="section-header">
+          <p class="section-kicker" id="architecture-kicker">Architecture View</p>
+          <h2 id="architecture-title">How a request moves through SafeCore</h2>
+        </div>
+        <article class="panel architecture-flow">
+          <div class="flow-line" id="flow-line"></div>
+          <div class="layer-grid" id="layer-grid"></div>
+        </article>
+      </section>
+
+      <section class="section" id="scope">
+        <div class="section-header">
+          <p class="section-kicker" id="scope-kicker">Current Scope</p>
+          <h2 id="scope-title">Real today vs intentionally not included yet</h2>
+        </div>
+        <div class="scope-grid">
+          <article class="panel">
+            <h3 id="use-today-title">How to use it today</h3>
+            <div class="stack-list" id="use-path-grid"></div>
+          </article>
+          <article class="panel">
+            <h3 id="boundaries-title">Current boundaries</h3>
+            <ul class="limit-list" id="not-included-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="audiences">
+        <div class="section-header">
+          <p class="section-kicker" id="audiences-kicker">For Whom It Matters</p>
+          <h2 id="audiences-title">Who should care about this project</h2>
+        </div>
+        <div class="audience-grid" id="audience-grid"></div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-header">
+          <p class="section-kicker" id="roadmap-kicker">Roadmap Direction</p>
+          <h2 id="roadmap-title">Where the project can grow without changing its identity</h2>
+        </div>
+        <article class="panel">
+          <ul class="roadmap-list" id="roadmap-list"></ul>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="/ui-assets/app.js"></script>
+</body>
+</html>

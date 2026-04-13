@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SafetyDecision",
+  "description": "Core safety decision returned by SafeCore components.",
+  "type": "object",
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": ["ALLOW", "DENY", "NEEDS_APPROVAL"]
+    },
+    "risk_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operator_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "decision",
+    "risk_score",
+    "reasons",
+    "constraints",
+    "operator_checks"
+  ],
+  "additionalProperties": false
+}
+
