@@ -15,6 +15,7 @@ htmlcov/
 *.log.jsonl
 audit.log.jsonl
 examples/example_audit.log.jsonl
+examples/product_shell/product_shell_store.json
 
 # Tool caches
 .mypy_cache/
